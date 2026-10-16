@@ -2,59 +2,75 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-    <base target="_top">
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
     <title>ศรชล. Smart Service Desk</title>
 
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
+    <link rel="icon"
+          href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
 
     <style>
-        /* รีเซ็ตขอบทั้งหมด */
-        * {
-            margin: 0;
-            padding: 0;
+        /* ลบขอบและระยะห่างเริ่มต้นของเบราว์เซอร์ */
+        *,
+        *::before,
+        *::after {
             box-sizing: border-box;
         }
 
-        html, body {
+        html {
             width: 100%;
             height: 100%;
-            min-height: 100%;
-            overflow: hidden;
-            border: none;
+            margin: 0 !important;
+            padding: 0 !important;
+            border: 0;
         }
 
         body {
-            margin: 0;
-            padding: 0;
-        }
-
-        /* ให้ Apps Script เต็มพื้นที่หน้าจอ */
-        iframe {
-            display: block;
             position: fixed;
-            top: 0;
-            left: 0;
+            inset: 0;
             width: 100%;
             height: 100%;
             height: 100dvh;
+            margin: 0 !important;
+            padding: 0 !important;
+            overflow: hidden;
+            border: 0;
+        }
+
+        /* ขยาย Google Apps Script ให้เต็มจอ */
+        #app {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
             margin: 0;
             padding: 0;
-            border: none;
-            outline: none;
+            border: 0;
+            overflow: hidden;
+        }
+
+        #app iframe {
+            position: absolute;
+            inset: 0;
+            display: block;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            border: 0;
         }
     </style>
 </head>
 
 <body>
-    <iframe
-        src="https://script.google.com/macros/s/AKfycbyFh5Dob7N5V46h8WCzP7YuJFQkDzQXhBezqUi8T0AKr2-B3f7CC8ssRe4cWJQy23OzOQ/exec"
-        title="ศรชล. Smart Service Desk"
-        allowfullscreen>
-    </iframe>
+    <main id="app">
+        <iframe
+            src="https://script.google.com/macros/s/AKfycbyFh5Dob7N5V46h8WCzP7YuJFQkDzQXhBezqUi8T0AKr2-B3f7CC8ssRe4cWJQy23OzOQ/exec"
+            title="ศรชล. Smart Service Desk">
+        </iframe>
+    </main>
 </body>
 </html>
 ```
